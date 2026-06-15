@@ -686,7 +686,7 @@
     </div>
     <div class="success-button-stack">
       <button class="btn-success-done" onclick="resetPaymentWorkflowState()">Done</button>
-      <button class="btn-success-share" onclick="alert('Notification Transmitted Successfully')">Share Payment Notification</button>
+      <button class="btn-success-share" onclick="openProofOfPaymentPDF()">Share Payment Notification</button>
     </div>
     <div class="system-footer-nav">
       <div class="footer-nav-item"><svg class="footer-nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</div>
@@ -789,6 +789,13 @@
   function resetPaymentWorkflowState() {
     document.getElementById('successLayoutView').style.display = 'none';
     selectAccount('Main Account', 506.08, 39.00);
+  }
+
+  // PDF Trigger Feature Added Here
+  function openProofOfPaymentPDF() {
+    // Change this to your local file path or web target URL
+    const pdfUrl = 'your-proof-of-payment.pdf'; 
+    window.open(pdfUrl, '_blank');
   }
 </script>
 </body>
